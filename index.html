@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gesture Controlled Maze</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Part 2: Optional stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Part 2: 1. TensorFlow.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+
+  <!-- Part 2: 2. Teachable Machine helper script (Pose) -->
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8/dist/teachablemachine-pose.min.js"></script>
+
+  <!-- Part 2: 3. Game / maze logic -->
+  <script src="maze.js" defer></script>
+</head>
+<body>
+  <!-- Title for the assignment page -->
+  <h1>Gesture Controlled Maze</h1>
+
+  <!-- Part 2: Video element for webcam preview -->
+  <video id="webcam" autoplay playsinline width="320" height="240"></video>
+
+  <!-- Canvas used for drawing pose skeleton (from Teachable Machine) -->
+  <canvas id="canvas" width="320" height="240"></canvas>
+
+  <!-- Part 2: Status area for current prediction and confidence -->
+  <div id="prediction">Prediction: waiting for model...</div>
+
+  <!-- Maze drawing area for the 2D grid-based maze -->
+  <canvas id="mazeCanvas" width="500" height="350"></canvas>
+
+  <!-- Button to start webcam, model loading, and prediction loop -->
+  <button id="startBtn" type="button">Start Camera & Model</button>
+</body>
+</html>
